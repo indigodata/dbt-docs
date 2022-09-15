@@ -242,6 +242,9 @@ angular
 
             service.project.searchable = _.filter(search_nodes.concat(search_macros), function(obj) {
                 // It should not be possible to search for hidden documentation
+                if (obj.tags.includes('omit_from_docs')) {
+                    return false;
+                }
                 return !obj.docs || obj.docs.show;
             });
             service.loaded.resolve();
@@ -646,6 +649,8 @@ angular
             var show = _.get(node, ['docs', 'show'], true);
             if (!show) {
                 return false;
+            } else if (node.tags.includes('omit_from_docs')) {
+                return false
             } else if (_.indexOf(['source', 'snapshot', 'seed'], node.resource_type) != -1) {
                 return true;
             } else if (node.resource_type == 'model') {
