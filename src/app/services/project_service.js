@@ -240,7 +240,7 @@ angular
                 return _.includes(['model', 'source', 'seed', 'snapshot', 'analysis', 'exposure', 'metric'], node.resource_type);
             });
 
-            service.project.searchable = _.filter(search_nodes.concat(search_macros), function(obj) {
+            service.project.searchable = _.filter(search_nodes, function(obj) {
                 // It should not be possible to search for hidden documentation
                 if (obj.tags.includes('omit_from_docs')) {
                     return false;
