@@ -33,7 +33,6 @@
         </div>
         <div class="app-frame app-pad-h">
             <ul class="nav nav-tabs">
-                <li ui-sref-active='active'><a ui-sref="dbt.model({'#': 'details'})">Details</a></li>
                 <li ui-sref-active='active'><a ui-sref="dbt.model({'#': 'description'})">Description</a></li>
                 <li ui-sref-active='active'><a ui-sref="dbt.model({'#': 'columns'})">Columns</a></li>
                 <li ui-sref-active='active'><a ui-sref="dbt.model({'#': 'code'})">Code</a></li>
@@ -42,10 +41,6 @@
     </div>
     <div class="app-details">
         <div class="app-frame app-pad">
-            <section class="section">
-                <div class="section-target" id="details"></div>
-                <table-details model="model"></table-details>
-            </section>
 
             <section class="section">
                 <div class="section-target" id="description"></div>
